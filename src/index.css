@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  background: #f6f7f9;
+}
+
+.app {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.subtitle {
+  color: #738091;
+  font-weight: 400;
+}
+
+/* Player badges shown after game starts */
+.player-badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.player-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.player-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Dialog internals */
+.player-setup-grid {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.player-setup {
+  flex: 1;
+  padding: 8px 16px;
+}
+
+.player-setup h3 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-setup-divider {
+  width: 1px;
+  background: #dde1e6;
+  align-self: stretch;
+  margin: 0 8px;
+}
+
+/* Color swatches */
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.color-swatch:hover:not(.disabled) {
+  transform: scale(1.15);
+}
+
+.color-swatch.selected {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px currentColor, 0 0 0 3px rgba(0,0,0,0.15);
+}
+
+.color-swatch.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
