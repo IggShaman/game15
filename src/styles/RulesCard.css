@@ -1,0 +1,74 @@
+.rules-card {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  max-width: calc(100vw - 32px);
+  padding: 20px 24px 24px;
+  border-radius: 16px !important;
+  animation: pop-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes pop-in {
+  from { transform: translateX(-50%) scale(0.7); opacity: 0; }
+  to   { transform: translateX(-50%) scale(1);   opacity: 1; }
+}
+
+.rules-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.rules-card-header h4 {
+  margin: 0;
+}
+
+.rules-list {
+  margin: 0 0 14px 0;
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.rules-list li {
+  margin-bottom: 2px;
+}
+
+.rules-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #4a7fbd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rules-link:hover {
+  color: #2a5fa0;
+}
+
+.rules-tip {
+  font-size: 13px;
+  color: #738091;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+
+/* ---- Floating ? button ---- */
+.rules-fab {
+  position: fixed !important;
+  bottom: 24px;
+  right: 24px;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  font-size: 18px !important;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
+  z-index: 10;
+}

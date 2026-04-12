@@ -25,11 +25,15 @@ function cubeColors(n: number) {
 const STROKE = '#1c1c2e'
 const STROKE_W = 2.5
 
+export const CUBE_W = W + DX  // 100
+export const CUBE_H = H + DY  // 91
+
 interface CubeProps {
   number: number
+  scale?: number
 }
 
-export default function Cube({ number }: CubeProps) {
+export default function Cube({ number, scale = 1 }: CubeProps) {
   const { front, top, right } = cubeColors(number)
   const uid = `cube-${number}`
 
@@ -39,8 +43,8 @@ export default function Cube({ number }: CubeProps) {
   return (
     <svg
       viewBox={`0 0 ${W + DX} ${H + DY}`}
-      width={W + DX}
-      height={H + DY}
+      width={(W + DX) * scale}
+      height={(H + DY) * scale}
       style={{ overflow: 'visible', display: 'block' }}
       aria-label={`Tile ${number}`}
     >

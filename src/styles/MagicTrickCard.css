@@ -1,0 +1,57 @@
+.magic-card {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  padding: 20px 24px 24px;
+  border-radius: 16px !important;
+  animation: magic-pop-in 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes magic-pop-in {
+  from { transform: translateX(-50%) scale(0.7); opacity: 0; }
+  to   { transform: translateX(-50%) scale(1);   opacity: 1; }
+}
+
+.magic-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.magic-card-header h4 {
+  margin: 0;
+}
+
+.magic-p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #3d4a5a;
+  margin: 0 0 14px;
+}
+
+/* 3×3 magic square grid */
+.magic-square {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  gap: 6px;
+  justify-content: center;
+  margin: 4px auto 18px;
+}
+
+.magic-cell {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #1c1c2e;
+  background: hsl(var(--hue), 60%, 80%);
+  border: 2px solid hsl(var(--hue), 55%, 65%);
+}

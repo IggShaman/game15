@@ -1,0 +1,83 @@
+.player-hand {
+  flex: 1;
+  min-width: 260px;
+  border: 2.5px solid color-mix(in srgb, var(--player-color) 40%, transparent);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.player-hand.active {
+  border-color: var(--player-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--player-color) 25%, transparent),
+              0 4px 16px rgba(0,0,0,0.1);
+}
+
+.player-hand-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: color-mix(in srgb, var(--player-color) 15%, white);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--player-color) 30%, transparent);
+  font-weight: 700;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--player-color) 70%, #1c1c2e);
+}
+
+.player-hand-turn-arrow {
+  width: 14px;
+  font-size: 12px;
+  color: var(--player-color);
+}
+
+.player-hand-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-hand-count {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.player-hand-cubes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 10px 12px 12px;
+  min-height: 68px;
+  align-items: flex-end;
+}
+
+.player-hand-cube {
+  /* padding so drop-shadow isn't clipped */
+  padding: 4px 6px 2px 2px;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.player-hand-cube.winning {
+  filter: drop-shadow(0 0 7px gold) drop-shadow(0 0 3px orange);
+  transform: scale(1.12) translateY(-3px);
+}
+
+.player-hand.winner .player-hand-header {
+  background: color-mix(in srgb, var(--player-color) 22%, white);
+}
+
+.player-hand.winner .player-hand-turn-arrow {
+  color: gold;
+  text-shadow: 0 0 6px orange;
+}
+
+.player-hand-empty {
+  color: #aaa;
+  font-size: 20px;
+  line-height: 60px;
+  padding: 0 8px;
+}

@@ -15,16 +15,30 @@
 .cube-cell {
   /* extra space so drop-shadows aren't clipped */
   padding: 6px 10px 6px 4px;
-  cursor: pointer;
   transition: transform 0.12s ease, filter 0.12s ease;
 }
 
-.cube-cell:hover {
+.cube-cell.available {
+  cursor: pointer;
+}
+
+.cube-cell.available:hover {
   transform: translateY(-4px) scale(1.04);
   filter: brightness(1.06);
 }
 
-.cube-cell:active {
+.cube-cell.available:active {
   transform: translateY(-1px) scale(1.01);
   filter: brightness(0.97);
+}
+
+.cube-cell.taken {
+  cursor: default;
+}
+
+.cube-placeholder {
+  border-radius: 8px;
+  border: 2px dashed rgba(0,0,0,0.13);
+  background: rgba(0,0,0,0.03);
+  box-sizing: border-box;
 }
